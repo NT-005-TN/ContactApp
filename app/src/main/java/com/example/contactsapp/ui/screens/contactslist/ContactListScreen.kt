@@ -1,4 +1,4 @@
-package com.example.contactsapp.ui.screens.contactlist
+package com.example.contactsapp.ui.screens.contactslist
 
 import android.Manifest
 import android.content.Context
@@ -27,11 +27,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.contactsapp.data.repository.ContactsRepositoryImpl
 import com.example.contactsapp.domain.usecase.DeleteDuplicateContactsUseCase
-import com.example.contactsapp.ui.screens.contactlist.components.AlphabetHeader
-import com.example.contactsapp.ui.screens.contactlist.components.ContactDetailsRow
-import com.example.contactsapp.ui.screens.contactlist.components.FilterTabs
-import com.example.contactsapp.ui.screens.contactlist.model.ContactGroup
-import com.example.contactsapp.ui.screens.contactlist.model.ContactListUiState
+import com.example.contactsapp.ui.screens.contactslist.components.FilterTabs
+import com.example.contactsapp.ui.screens.contactslist.model.ContactGroup
+import com.example.contactsapp.ui.screens.contactslist.model.ContactListUiState
+import com.example.contactsapp.ui.screens.contactslist.components.AlphabetHeader
+import com.example.contactsapp.ui.screens.contactslist.components.ContactDetailsRow
 import com.example.contactsapp.ui.theme.BluePrimary
 import com.example.contactsapp.viewmodel.ContactListViewModel
 
@@ -170,7 +170,7 @@ internal fun ContactListContent(
             TopAppBar(
                 title = {
                     Column {
-                        Text("Contactos", fontWeight = FontWeight.Bold)
+                        Text("Контакты", fontWeight = FontWeight.Bold)
                         Text(
                             text = "${getTotalCount(uiState.groups)} en total",
                             fontSize = 12.sp,
@@ -282,19 +282,4 @@ internal fun ContactListContent(
 
 private fun getTotalCount(groups: List<ContactGroup>): Int {
     return groups.sumOf { it.contacts.size }
-}
-
-class ContactListViewModelFactory(
-    private val applicationContext: Context
-) : ViewModelProvider.Factory {
-
-    @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(ContactListViewModel::class.java)) {
-            val repository = ContactsRepositoryImpl(applicationContext)
-            val useCase = DeleteDuplicateContactsUseCase(repository)
-            return ContactListViewModel(repository, useCase) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
-    }
 }

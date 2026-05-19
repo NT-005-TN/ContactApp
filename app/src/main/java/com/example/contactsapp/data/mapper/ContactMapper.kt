@@ -1,7 +1,7 @@
 package com.example.contactsapp.data.mapper
 
 import com.example.contactsapp.domain.model.Contact
-import com.example.contactsapp.ui.screens.contactlist.model.ContactUiModel
+import com.example.contactsapp.ui.screens.contactslist.model.ContactUiModel
 import com.example.contactsapp.ui.theme.*
 import androidx.compose.ui.graphics.Color
 

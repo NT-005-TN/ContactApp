@@ -1,4 +1,4 @@
-package com.example.contactsapp.ui.screens.contactlist.model
+package com.example.contactsapp.ui.screens.contactslist.model
 
 import androidx.compose.ui.graphics.Color
 

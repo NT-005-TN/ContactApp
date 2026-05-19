@@ -6,8 +6,9 @@ import com.example.contactsapp.data.mapper.ContactMapper
 import com.example.contactsapp.data.repository.ContactsRepositoryImpl
 import com.example.contactsapp.data.service.ContactsService
 import com.example.contactsapp.domain.usecase.DeleteDuplicateContactsUseCase
-import com.example.contactsapp.ui.screens.contactlist.model.ContactGroup
-import com.example.contactsapp.ui.screens.contactlist.model.ContactListUiState
+import com.example.contactsapp.ui.screens.contactslist.model.ContactGroup
+import com.example.contactsapp.ui.screens.contactslist.model.ContactListUiState
+import com.example.contactsapp.ui.screens.contactslist.model.ContactUiModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -91,7 +92,7 @@ class ContactListViewModel(
     }
 
     private fun applyFilter(
-        contacts: List<com.example.contactsapp.ui.screens.contactlist.model.ContactUiModel>,
+        contacts: List<ContactUiModel>,
         filter: String
     ) = when (filter) {
         "Favoritos" -> contacts.filter { it.isFavorite }
@@ -100,7 +101,7 @@ class ContactListViewModel(
     }
 
     private fun groupContactsByLetter(
-        contacts: List<com.example.contactsapp.ui.screens.contactlist.model.ContactUiModel>
+        contacts: List<ContactUiModel>
     ): List<ContactGroup> = contacts
         .groupBy { it.fullName.firstOrNull()?.uppercaseChar()?.toString() ?: "#" }
         .map { (letter, groupContacts) -> ContactGroup(letter, groupContacts) }

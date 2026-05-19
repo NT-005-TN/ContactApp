@@ -1,9 +1,9 @@
-package com.example.contactsapp.ui.screens.contactlist
+package com.example.contactsapp.ui.screens.contactslist
 
 import android.content.res.Configuration
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.contactsapp.ui.screens.contactlist.model.*
+import com.example.contactsapp.ui.screens.contactslist.model.*
 import com.example.contactsapp.ui.theme.*
 
 @Preview(showBackground = true, device = "id:pixel_8", name = "ContactList - Заполненный")

@@ -1,4 +1,4 @@
-package com.example.contactsapp.ui.screens.contactlist.components
+package com.example.contactsapp.ui.screens.contactslist.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row

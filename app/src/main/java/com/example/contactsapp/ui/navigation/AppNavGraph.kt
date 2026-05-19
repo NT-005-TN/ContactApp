@@ -7,7 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.contactsapp.ui.screens.contactdetail.ContactDetailScreen
-import com.example.contactsapp.ui.screens.contactlist.ContactListScreen
+import com.example.contactsapp.ui.screens.contactslist.ContactListScreen
 import com.example.contactsapp.ui.screens.dashboard.DashboardScreen
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.platform.LocalContext
