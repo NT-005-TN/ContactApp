@@ -63,7 +63,7 @@ fun ContactListScreenEmptyPreview() {
     ContactsAppTheme {
         ContactListContent(
             uiState = ContactListUiState(
-                selectedFilter = "Todos",
+                selectedFilter = "Все",
                 groups = emptyList()
             ),
             onBackClick = {},
@@ -111,7 +111,7 @@ fun ContactListScreenFavoritesPreview() {
 }
 
 private fun sampleContactListState() = ContactListUiState(
-    selectedFilter = "Todos",
+    selectedFilter = "Все",
     groups = listOf(
         ContactGroup("A", listOf(
             ContactUiModel("1", "AL", "Ana López Martínez", "+34 612 345 678",

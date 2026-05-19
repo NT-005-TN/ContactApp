@@ -43,9 +43,6 @@ fun ContactDetailScreen(
     )
 }
 
-/**
- * Содержимое экрана (вынесено для превью и тестов)
- */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun ContactDetailContent(
@@ -110,16 +107,12 @@ internal fun ContactDetailContent(
     }
 }
 
-/**
- * Основной контент экрана деталей
- */
 @Composable
 private fun ContactDetailBody(
     contact: ContactDetail,
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier) {
-        // === Purple Header с аватаром ===
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -131,7 +124,6 @@ private fun ContactDetailBody(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier.padding(top = 40.dp)
             ) {
-                // Аватар
                 Box(
                     modifier = Modifier
                         .size(100.dp)
@@ -165,7 +157,6 @@ private fun ContactDetailBody(
             }
         }
 
-        // === Кнопки действий ===
         Card(
             modifier = Modifier
                 .fillMaxWidth()
@@ -180,17 +171,16 @@ private fun ContactDetailBody(
                     .padding(16.dp),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                ActionButton(icon = Icons.Default.Phone, label = "Llamar", onClick = {})
-                ActionButton(icon = Icons.Default.ChatBubbleOutline, label = "Mensaje", onClick = {})
-                ActionButton(icon = Icons.Default.Videocam, label = "Video", onClick = {})
+                ActionButton(icon = Icons.Default.Phone, label = "Позвонить", onClick = {})
+                ActionButton(icon = Icons.Default.ChatBubbleOutline, label = "Сообщение", onClick = {})
+                ActionButton(icon = Icons.Default.Videocam, label = "Видео", onClick = {})
             }
         }
 
         Spacer(Modifier.height(24.dp))
 
-        // === Секция: Контактная информация ===
         Text(
-            text = "Información de Contacto",
+            text = "Информация о контакте",
             fontSize = 16.sp,
             fontWeight = FontWeight.SemiBold,
             color = TextSecondary,
@@ -199,28 +189,27 @@ private fun ContactDetailBody(
 
         ContactInfoItem(
             icon = Icons.Default.Phone,
-            title = "TELÉFONO MÓVIL",
+            title = "Номер телефона",
             content = contact.phoneNumber,
             iconBackgroundColor = PurplePrimary
         )
         ContactInfoItem(
             icon = Icons.Default.Email,
-            title = "CORREO ELECTRÓNICO",
+            title = "Почта",
             content = contact.email,
             iconBackgroundColor = PurplePrimary
         )
         ContactInfoItem(
             icon = Icons.Default.LocationOn,
-            title = "DIRECCIÓN",
+            title = "Адрес",
             content = contact.address,
             iconBackgroundColor = PurplePrimary
         )
 
         Spacer(Modifier.height(24.dp))
 
-        // === Секция: Заметки ===
         Text(
-            text = "Notas",
+            text = "Заметки",
             fontSize = 16.sp,
             fontWeight = FontWeight.SemiBold,
             color = TextSecondary,
@@ -246,22 +235,19 @@ private fun ContactDetailBody(
 
         Spacer(Modifier.height(24.dp))
 
-        // === Секция: Компания ===
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            CompanyInfoCard(title = "Empresa", content = contact.company, modifier = Modifier.weight(1f))
-            CompanyInfoCard(title = "Departamento", content = contact.department, modifier = Modifier.weight(1f))
+            CompanyInfoCard(title = "Компания", content = contact.company, modifier = Modifier.weight(1f))
+            CompanyInfoCard(title = "Отдел", content = contact.department, modifier = Modifier.weight(1f))
         }
 
         Spacer(Modifier.height(40.dp))
     }
 }
-
-// === Вспомогательные компоненты ===
 
 @Composable
 private fun ActionButton(

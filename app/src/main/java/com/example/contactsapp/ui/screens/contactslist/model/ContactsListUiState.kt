@@ -19,7 +19,7 @@ data class ContactGroup(
 data class ContactListUiState(
     val isLoading: Boolean = false,
     val isDeletingDuplicates: Boolean = false,
-    val selectedFilter: String = "Todos",
+    val selectedFilter: String = "Все",
     val groups: List<ContactGroup> = emptyList(),
     val errorMessage: String? = null,
     val showSnackbar: Boolean = false,

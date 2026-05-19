@@ -172,7 +172,7 @@ internal fun ContactListContent(
                     Column {
                         Text("Контакты", fontWeight = FontWeight.Bold)
                         Text(
-                            text = "${getTotalCount(uiState.groups)} en total",
+                            text = "${getTotalCount(uiState.groups)} в итоге",
                             fontSize = 12.sp,
                             color = Color.Gray
                         )
@@ -195,10 +195,10 @@ internal fun ContactListContent(
                         )
                     }
                     IconButton(onClick = {}) {
-                        Icon(Icons.Default.Search, contentDescription = "Search")
+                        Icon(Icons.Default.Search, contentDescription = "Поиск")
                     }
                     IconButton(onClick = {}) {
-                        Icon(Icons.Default.MoreVert, contentDescription = "Menu")
+                        Icon(Icons.Default.MoreVert, contentDescription = "Меню")
                     }
                 }
             )
@@ -208,7 +208,7 @@ internal fun ContactListContent(
                 onClick = onAddContactClick,
                 containerColor = BluePrimary
             ) {
-                Icon(Icons.Default.Add, contentDescription = "Add", tint = Color.White)
+                Icon(Icons.Default.Add, contentDescription = "Добавить", tint = Color.White)
             }
         },
         snackbarHost = {
@@ -228,7 +228,7 @@ internal fun ContactListContent(
                 .padding(paddingValues)
         ) {
             FilterTabs(
-                filters = listOf("Todos", "Favoritos", "Trabajo"),
+                filters = listOf("Все", "Избранные", "Работа"),
                 selectedFilter = uiState.selectedFilter,
                 onFilterSelected = onFilterSelected
             )
